@@ -16,16 +16,16 @@ public class RegistrationForm extends AppCompatActivity {
         }
 
         if(layout_name.equals("profile_home")){
-            setContentView(R.layout.activity_registration_form);
+            setContentView(R.layout.personal_registration_form);
         }
         else if(layout_name.equals("profile_work")){
-            setContentView(R.layout.activity_registration_form);
+            setContentView(R.layout.personal_registration_form);
         }
         else if(layout_name.equals("profile_basic")){
-            setContentView(R.layout.activity_registration_form);
+            setContentView(R.layout.personal_registration_form);
         }
         else {
-            setContentView(R.layout.activity_registration_form);
+            setContentView(R.layout.personal_registration_form);
         }
     }
 }

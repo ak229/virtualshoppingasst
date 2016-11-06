@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_registration_form"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="ub.tuere.virtualshoppingasst.RegistrationForm">
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:layout_marginTop="13dp"
+        android:id="@+id/pmobile"
+        android:layout_below="@+id/pname"
+        android:layout_alignStart="@+id/pname"
+        android:hint="Enter you mobile no" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:layout_marginTop="13dp"
+        android:id="@+id/phome"
+        android:layout_below="@+id/pmobile"
+        android:layout_alignStart="@+id/pmobile"
+        android:hint="Enter your home no" />
+
+    <TextView
+        android:text="Mobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView8"
+        android:layout_alignBaseline="@+id/pmobile"
+        android:layout_alignBottom="@+id/pmobile"
+        android:layout_alignStart="@+id/textView6" />
+
+    <TextView
+        android:text="home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView9"
+        android:layout_alignBaseline="@+id/phome"
+        android:layout_alignBottom="@+id/phome"
+        android:layout_toStartOf="@+id/pname" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginTop="11dp"
+        android:id="@+id/pfb"
+        android:layout_below="@+id/phome"
+        android:layout_alignStart="@+id/phome"
+        android:hint="Enter FB username" />
+
+    <TextView
+        android:text="FB     "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/pfb"
+        android:layout_alignEnd="@+id/textView8"
+        android:layout_marginBottom="11dp"
+        android:id="@+id/textView10" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:layout_marginTop="12dp"
+        android:id="@+id/pemail"
+        android:layout_below="@+id/pfb"
+        android:layout_alignStart="@+id/pfb"
+        android:hint="Enter your email Address" />
+
+    <TextView
+        android:text="Email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView12"
+        android:layout_alignBaseline="@+id/pemail"
+        android:layout_alignBottom="@+id/pemail"
+        android:layout_alignEnd="@+id/textView10" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/ptwitter"
+        android:layout_below="@+id/pemail"
+        android:layout_alignStart="@+id/pemail"
+        android:layout_marginTop="12dp"
+        android:hint="Enter Twitter Handle" />
+
+    <TextView
+        android:text="Twitter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView13"
+        android:layout_alignBaseline="@+id/ptwitter"
+        android:layout_alignBottom="@+id/ptwitter"
+        android:layout_alignEnd="@+id/textView12" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_below="@+id/ptwitter"
+        android:layout_alignStart="@+id/ptwitter"
+        android:layout_marginTop="11dp"
+        android:id="@+id/psnapchat"
+        android:hint="Enter Snapchat id" />
+
+    <TextView
+        android:text="Snapchat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/psnapchat"
+        android:layout_alignEnd="@+id/textView13"
+        android:layout_marginBottom="11dp"
+        android:id="@+id/textView14" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginTop="10dp"
+        android:id="@+id/pinstagram"
+        android:layout_below="@+id/psnapchat"
+        android:layout_alignStart="@+id/psnapchat"
+        android:hint="Enter Instagram user id" />
+
+    <TextView
+        android:text="Instagram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/pinstagram"
+        android:layout_alignStart="@+id/textView14"
+        android:layout_marginTop="10dp"
+        android:id="@+id/textView15" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginStart="13dp"
+        android:id="@+id/pname"
+        android:hint="Enter your name"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/textView15" />
+
+    <TextView
+        android:text="Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:id="@+id/textView6"
+        android:layout_alignBaseline="@+id/pname"
+        android:layout_alignBottom="@+id/pname"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Update Personal QR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/updatepersonal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>
