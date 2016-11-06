@@ -9,4 +9,29 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ub.tuere.virtualshoppingasst.Barcode_shower">
 
+    <TextView
+        android:text="VCard is Ready."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="61dp"
+        android:id="@+id/textView2"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Generate QR CODE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/genqr" />
+
+    <TextView
+        android:text="Click the button below to generate QR Code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp"
+        android:id="@+id/textView3" />
 </RelativeLayout>

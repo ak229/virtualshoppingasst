@@ -1,8 +1,7 @@
 {"user":
     {
        "name":"GB",
-       "email":"uatuere@gmail.com",
        "tel":"1381149604",
-       "notes":"http://123.124.1.15/personal/12414"
+       "notes":"12414"
     }
 }

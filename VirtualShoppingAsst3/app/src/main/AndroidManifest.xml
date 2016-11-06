@@ -11,8 +11,6 @@
         <activity android:name=".BarcodeScanner">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".Barcode_shower" />
@@ -25,6 +23,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="ub.tuere.virtualshoppingasst.BarcodeScanner" />
         </activity>
+        <activity android:name=".qrcodeshower" />
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".RegistrationForm" />
+        <activity android:name=".ScannerResult"></activity>
     </application>
 
 </manifest>
