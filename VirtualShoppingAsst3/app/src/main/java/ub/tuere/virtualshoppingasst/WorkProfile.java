@@ -19,9 +19,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Arrays;
 
-public class WorkProfile extends AppCompatActivity implements View.OnClickListener{
+public class WorkProfile extends AppCompatActivity implements View.OnClickListener {
 
-    private Button leftBtn,rightBtn;
+    private Button rightBtn,leftBtn;
     ImageView qrCodeImageview;
     String QRcode;
     public final static int WIDTH=500;
@@ -29,41 +29,45 @@ public class WorkProfile extends AppCompatActivity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_work_profile);
-
-        leftBtn = (Button)findViewById(R.id.workbasicprofile);
-        leftBtn.setOnClickListener(this);
+        setContentView(R.layout.activity_home_profile);
 
         rightBtn = (Button)findViewById(R.id.workcompleteprofile);
         rightBtn.setOnClickListener(this);
 
+        leftBtn = (Button)findViewById(R.id.workbasicprofile);
+        leftBtn.setOnClickListener(this);
+
+        int ch;
         String FILENAME = "profile_work";
-        FileInputStream fis = null;
+        StringBuffer fileContent = new StringBuffer("");
+        FileInputStream fis;
         try {
 
-            fis = openFileInput(FILENAME);
-            byte[] asf = null;
-
-            int zilch = fis.read(asf);
-            QRcode = Arrays.toString(asf);
+            fis = this.openFileInput(FILENAME);
+            try {
+                while( (ch = fis.read()) != -1)
+                    fileContent.append((char)ch);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
         }
         catch (FileNotFoundException e) {
-/*
+           /*
             Intent i = new Intent(this, RegistrationForm.class);
             i.putExtra("Filename",FILENAME);
-            startActivity(i);
-*/
+            startActivity(i);*/
             Toast toast = Toast.makeText(getApplicationContext(),
                     "Error", Toast.LENGTH_SHORT);
             toast.show();
+
         } catch (IOException e) {
 
             e.printStackTrace();
 
         }
 
-
+        QRcode = new String(fileContent);
         getID();
 // create thread to avoid ANR Exception
         Thread t = new Thread(new Runnable() {

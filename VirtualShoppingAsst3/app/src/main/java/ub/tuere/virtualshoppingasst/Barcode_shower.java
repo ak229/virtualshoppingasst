@@ -96,7 +96,6 @@ public class Barcode_shower extends AppCompatActivity implements View.OnClickLis
 
 
         }
-
         catch(Exception je){
             Toast.makeText(getApplicationContext(),
                     "Problems: " + je.getMessage(), Toast.LENGTH_LONG).show();

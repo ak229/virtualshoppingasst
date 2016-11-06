@@ -17,6 +17,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONObject;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -26,6 +28,44 @@ public class BarcodeScanner extends Activity implements OnClickListener {
 
     private Button scanBtn, updateBtn, barcodeBtn;
 
+
+    public String createVCard (String json_input){
+        String result = "";
+
+        try {
+            JSONObject reader = new JSONObject(json_input);
+
+            String notes_fromjson = "";
+            String name_fromjson = "";
+            String tel_fromjson = "";
+
+
+            JSONObject namer  = reader.getJSONObject("user");
+            name_fromjson = namer.getString("name");
+
+            JSONObject telr  = reader.getJSONObject("user");
+            tel_fromjson = telr.getString("tel");
+
+            JSONObject notesr  = reader.getJSONObject("user");
+            notes_fromjson = notesr.getString("notes");
+
+            result = result + "BEGIN:VCARD\n";
+            result = result + "VERSION:4.0\n";
+            result = result + "N:"+name_fromjson+";\n";
+            result = result + "TEL;TYPE=voice"+";"+"VALUE=uri:tel:"+tel_fromjson+"\n";
+            result = result + "NOTES:"+notes_fromjson+"\n";
+            result = result + "END:VCARD";
+
+
+        }
+
+        catch(Exception je){
+            Toast.makeText(getApplicationContext(),
+                    "Problems: " + je.getMessage(), Toast.LENGTH_LONG).show();
+        }
+
+        return result;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +91,100 @@ public class BarcodeScanner extends Activity implements OnClickListener {
         }
         if(v.getId() == R.id.barcodeshower){
             System.out.println("Got here");
-            Intent i = new Intent(this, Barcode_shower.class);
-            startActivity(i);
+            FileOutputStream writer = null;
+            try {
+            writer = openFileOutput("profile_home", Context.MODE_PRIVATE);
+
+                String src = " {\"user\":\n" +
+                        "    {\n" +
+                        "       \"name\":\"GB\",\n" +
+                        "       \"tel\":\"1381149604\",\n" +
+                        "       \"notes\":\"12414\"\n" +
+                        "    }\n" +
+                        "}";
+
+                String as = createVCard(src);
+                writer.write(as.getBytes());
+
+                writer.flush();
+                writer.close();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+
+            try {
+                writer = openFileOutput("profile_work", Context.MODE_PRIVATE);
+
+                String src = " {\"user\":\n" +
+                        "    {\n" +
+                        "       \"name\":\"GB\",\n" +
+                        "       \"tel\":\"1381149604\",\n" +
+                        "       \"notes\":\"12424\"\n" +
+                        "    }\n" +
+                        "}";
+
+                String as = createVCard(src);
+                writer.write(as.getBytes());
+
+                writer.flush();
+                writer.close();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+
+            try {
+                writer = openFileOutput("profile_basic", Context.MODE_PRIVATE);
+
+                String src = " {\"user\":\n" +
+                        "    {\n" +
+                        "       \"name\":\"GB\",\n" +
+                        "       \"tel\":\"1381149604\",\n" +
+                        "       \"notes\":\"12434\"\n" +
+                        "    }\n" +
+                        "}";
+
+                String as = createVCard(src);
+                writer.write(as.getBytes());
+
+                writer.flush();
+                writer.close();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+
+            try {
+                writer = openFileOutput("profile_complete", Context.MODE_PRIVATE);
+
+                String src = " {\"user\":\n" +
+                        "    {\n" +
+                        "       \"name\":\"GB\",\n" +
+                        "       \"tel\":\"1381149604\",\n" +
+                        "       \"notes\":\"12444\"\n" +
+                        "    }\n" +
+                        "}";
+
+                String as = createVCard(src);
+                writer.write(as.getBytes());
+
+                writer.flush();
+                writer.close();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+            //Intent i = new Intent(this, Barcode_shower.class);
+            //startActivity(i);
         }
 
     }

@@ -29,25 +29,29 @@ public class CompleteProfile extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_complete_profile);
+        setContentView(R.layout.activity_home_profile);
 
-        leftBtn = (Button)findViewById(R.id.completeworkprofile);
+        leftBtn = (Button)findViewById(R.id.homebasicprofile);
         leftBtn.setOnClickListener(this);
 
+        int ch;
         String FILENAME = "profile_complete";
-        FileInputStream fis = null;
+        StringBuffer fileContent = new StringBuffer("");
+        FileInputStream fis;
         try {
 
-            fis = openFileInput(FILENAME);
-            byte[] asf = null;
-
-            int zilch = fis.read(asf);
-            QRcode = Arrays.toString(asf);
+            fis = this.openFileInput(FILENAME);
+            try {
+                while( (ch = fis.read()) != -1)
+                    fileContent.append((char)ch);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
         }
         catch (FileNotFoundException e) {
-
-            /*Intent i = new Intent(this, RegistrationForm.class);
+           /*
+            Intent i = new Intent(this, RegistrationForm.class);
             i.putExtra("Filename",FILENAME);
             startActivity(i);*/
             Toast toast = Toast.makeText(getApplicationContext(),
@@ -60,7 +64,7 @@ public class CompleteProfile extends AppCompatActivity implements View.OnClickLi
 
         }
 
-
+        QRcode = new String(fileContent);
         getID();
 // create thread to avoid ANR Exception
         Thread t = new Thread(new Runnable() {

@@ -34,16 +34,19 @@ public class HomeProfile extends AppCompatActivity implements View.OnClickListen
         rightBtn = (Button)findViewById(R.id.homebasicprofile);
         rightBtn.setOnClickListener(this);
 
-
+        int ch;
         String FILENAME = "profile_home";
-        FileInputStream fis = null;
+        StringBuffer fileContent = new StringBuffer("");
+        FileInputStream fis;
         try {
 
-            fis = openFileInput(FILENAME);
-            byte[] asf = null;
-
-            int zilch = fis.read(asf);
-            QRcode = Arrays.toString(asf);
+            fis = this.openFileInput(FILENAME);
+            try {
+                while( (ch = fis.read()) != -1)
+                    fileContent.append((char)ch);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
         }
         catch (FileNotFoundException e) {
@@ -61,7 +64,7 @@ public class HomeProfile extends AppCompatActivity implements View.OnClickListen
 
         }
 
-
+        QRcode = new String(fileContent);
         getID();
 // create thread to avoid ANR Exception
         Thread t = new Thread(new Runnable() {
