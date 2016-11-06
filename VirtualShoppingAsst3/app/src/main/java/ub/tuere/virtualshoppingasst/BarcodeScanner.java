@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 public class BarcodeScanner extends Activity implements OnClickListener {
 
-    private Button scanBtn;
+    private Button scanBtn, updateBtn;
     private TextView formatTxt, contentTxt;
 
 
@@ -24,7 +24,9 @@ public class BarcodeScanner extends Activity implements OnClickListener {
         scanBtn = (Button)findViewById(R.id.scan_button);
         formatTxt = (TextView)findViewById(R.id.scan_format);
         contentTxt = (TextView)findViewById(R.id.scan_content);
+        updateBtn = (Button)findViewById(R.id.update_button);
         scanBtn.setOnClickListener(this);
+        updateBtn.setOnClickListener(this);
 
     }
 
@@ -32,7 +34,11 @@ public class BarcodeScanner extends Activity implements OnClickListener {
         if(v.getId()==R.id.scan_button){
             IntentIntegrator scanIntegrator = new IntentIntegrator(this);
             scanIntegrator.initiateScan();
-
+        }
+        if(v.getId() == R.id.update_button){
+            System.out.println("Got here");
+            Intent i = new Intent(this, ShareQR.class);
+            startActivity(i);
         }
     }
 

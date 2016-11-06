@@ -15,7 +15,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Barcode_shower"></activity>
+        <activity android:name=".Barcode_shower" />
+        <activity
+            android:name=".ShareQR"
+            android:label="@string/title_activity_share_qr"
+            android:parentActivityName=".BarcodeScanner"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ub.tuere.virtualshoppingasst.BarcodeScanner" />
+        </activity>
     </application>
 
 </manifest>

@@ -29,4 +29,13 @@
         android:textIsSelectable="true"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/scan_format" />
+
+    <Button
+        android:text="Update my data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="61dp"
+        android:id="@+id/update_button"
+        android:layout_below="@+id/scan_content"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
