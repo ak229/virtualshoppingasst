@@ -14,15 +14,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".Barcode_shower" />
-        <activity
-            android:name=".ShareQR"
-            android:label="@string/title_activity_share_qr"
-            android:parentActivityName=".BarcodeScanner"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="ub.tuere.virtualshoppingasst.BarcodeScanner" />
-        </activity>
         <activity android:name=".qrcodeshower" />
         <activity android:name=".SplashScreen">
             <intent-filter>
@@ -32,7 +23,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegistrationForm" />
-        <activity android:name=".ScannerResult"></activity>
+        <activity android:name=".ScannerResult" />
+        <activity android:name=".HomeProfile" />
+        <activity android:name=".WorkProfile" />
+        <activity android:name=".BasicProfile" />
+        <activity android:name=".CompleteProfile" />
     </application>
 
 </manifest>

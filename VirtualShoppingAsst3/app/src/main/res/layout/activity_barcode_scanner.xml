@@ -36,12 +36,5 @@
         android:layout_below="@+id/scan_button"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        android:text="Add a Contact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/contact_add"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/scan_button"
-        android:layout_marginBottom="30dp" />
+
 </RelativeLayout>

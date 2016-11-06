@@ -24,7 +24,7 @@ import java.io.IOException;
 
 public class BarcodeScanner extends Activity implements OnClickListener {
 
-    private Button scanBtn, updateBtn, barcodeBtn, createContactBtn;
+    private Button scanBtn, updateBtn, barcodeBtn;
 
 
     @Override
@@ -34,11 +34,9 @@ public class BarcodeScanner extends Activity implements OnClickListener {
         scanBtn = (Button)findViewById(R.id.scan_button);
         updateBtn = (Button)findViewById(R.id.update_button);
         barcodeBtn = (Button)findViewById(R.id.barcodeshower);
-        createContactBtn = (Button)findViewById(R.id.contact_add);
         scanBtn.setOnClickListener(this);
         updateBtn.setOnClickListener(this);
         barcodeBtn.setOnClickListener(this);
-        createContactBtn.setOnClickListener(this);
 
     }
 
@@ -48,8 +46,7 @@ public class BarcodeScanner extends Activity implements OnClickListener {
             scanIntegrator.initiateScan();
         }
         if(v.getId() == R.id.update_button){
-            System.out.println("Got here");
-            Intent i = new Intent(this, ShareQR.class);
+            Intent i = new Intent(this, HomeProfile.class);
             startActivity(i);
         }
         if(v.getId() == R.id.barcodeshower){
@@ -57,34 +54,7 @@ public class BarcodeScanner extends Activity implements OnClickListener {
             Intent i = new Intent(this, Barcode_shower.class);
             startActivity(i);
         }
-        if(v.getId() == R.id.contact_add){
-            System.out.println("Got here");
 
-
-            String FILENAME = "profile_home";
-
-
-            FileInputStream fis = null;
-
-            try {
-                fis = openFileInput(FILENAME);
-
-                byte[] asf = null;
-                byte[] ffa = null;
-
-                System.out.println(""+fis.read(asf));
-
-            } catch (FileNotFoundException e) {
-                Intent i = new Intent(this, RegistrationForm.class);
-                i.putExtra("Filename",FILENAME);
-                startActivity(i);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-
-        }
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
