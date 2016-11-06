@@ -29,7 +29,7 @@ public class WorkProfile extends AppCompatActivity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_profile);
+        setContentView(R.layout.activity_work_profile);
 
         rightBtn = (Button)findViewById(R.id.workcompleteprofile);
         rightBtn.setOnClickListener(this);

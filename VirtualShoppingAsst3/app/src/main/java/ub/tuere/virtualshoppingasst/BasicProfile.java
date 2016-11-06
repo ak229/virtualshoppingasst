@@ -29,7 +29,7 @@ public class BasicProfile extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_profile);
+        setContentView(R.layout.activity_basic_profile);
 
         rightBtn = (Button)findViewById(R.id.basicworkprofile);
         rightBtn.setOnClickListener(this);
@@ -38,7 +38,7 @@ public class BasicProfile extends AppCompatActivity implements View.OnClickListe
         leftBtn.setOnClickListener(this);
 
         int ch;
-        String FILENAME = "profile_home";
+        String FILENAME = "profile_basic";
         StringBuffer fileContent = new StringBuffer("");
         FileInputStream fis;
         try {

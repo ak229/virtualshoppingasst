@@ -91,92 +91,92 @@ public class BarcodeScanner extends Activity implements OnClickListener {
         }
         if(v.getId() == R.id.barcodeshower){
             System.out.println("Got here");
-            FileOutputStream writer = null;
+            FileOutputStream writer1 = null;
             try {
-            writer = openFileOutput("profile_home", Context.MODE_PRIVATE);
+            writer1 = openFileOutput("profile_home", Context.MODE_PRIVATE);
 
                 String src = " {\"user\":\n" +
                         "    {\n" +
                         "       \"name\":\"GB\",\n" +
                         "       \"tel\":\"1381149604\",\n" +
-                        "       \"notes\":\"12414\"\n" +
+                        "       \"notes\":\"home/581f50c42d4a6fb40b000002\"\n" +
                         "    }\n" +
                         "}";
 
                 String as = createVCard(src);
-                writer.write(as.getBytes());
+                writer1.write(as.getBytes());
 
-                writer.flush();
-                writer.close();
+                writer1.flush();
+                writer1.close();
             }
             catch (IOException e) {
                 e.printStackTrace();
             }
 
 
-
+            FileOutputStream writer2 = null;
             try {
-                writer = openFileOutput("profile_work", Context.MODE_PRIVATE);
+                writer2 = openFileOutput("profile_work", Context.MODE_PRIVATE);
 
                 String src = " {\"user\":\n" +
                         "    {\n" +
                         "       \"name\":\"GB\",\n" +
                         "       \"tel\":\"1381149604\",\n" +
-                        "       \"notes\":\"12424\"\n" +
+                        "       \"notes\":\"work/581f50c42d4a6fb40b000002\"\n" +
                         "    }\n" +
                         "}";
 
                 String as = createVCard(src);
-                writer.write(as.getBytes());
+                writer2.write(as.getBytes());
 
-                writer.flush();
-                writer.close();
+                writer2.flush();
+                writer2.close();
             }
             catch (IOException e) {
                 e.printStackTrace();
             }
 
-
+            FileOutputStream writer3 = null;
 
             try {
-                writer = openFileOutput("profile_basic", Context.MODE_PRIVATE);
+                writer3 = openFileOutput("profile_basic", Context.MODE_PRIVATE);
 
                 String src = " {\"user\":\n" +
                         "    {\n" +
                         "       \"name\":\"GB\",\n" +
                         "       \"tel\":\"1381149604\",\n" +
-                        "       \"notes\":\"12434\"\n" +
+                        "       \"notes\":\"basic/581f50c42d4a6fb40b000002\"\n" +
                         "    }\n" +
                         "}";
 
                 String as = createVCard(src);
-                writer.write(as.getBytes());
+                writer3.write(as.getBytes());
 
-                writer.flush();
-                writer.close();
+                writer3.flush();
+                writer3.close();
             }
             catch (IOException e) {
                 e.printStackTrace();
             }
 
-
+            FileOutputStream writer4 = null;
 
             try {
-                writer = openFileOutput("profile_complete", Context.MODE_PRIVATE);
+                writer4 = openFileOutput("profile_complete", Context.MODE_PRIVATE);
 
                 String src = " {\"user\":\n" +
                         "    {\n" +
                         "       \"name\":\"GB\",\n" +
                         "       \"tel\":\"1381149604\",\n" +
-                        "       \"notes\":\"12444\"\n" +
+                        "       \"notes\":\"complete/581f50c42d4a6fb40b000002\"\n" +
                         "    }\n" +
                         "}";
 
                 String as = createVCard(src);
-                writer.write(as.getBytes());
+                writer4.write(as.getBytes());
 
-                writer.flush();
-                writer.close();
+                writer4.flush();
+                writer4.close();
             }
             catch (IOException e) {
                 e.printStackTrace();

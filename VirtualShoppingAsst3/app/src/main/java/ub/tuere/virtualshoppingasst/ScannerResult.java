@@ -1,7 +1,9 @@
 package ub.tuere.virtualshoppingasst;
 
+import android.app.DownloadManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.net.*;
 
 public class ScannerResult extends AppCompatActivity {
     String ScanResults;
@@ -14,8 +16,8 @@ public class ScannerResult extends AppCompatActivity {
 
         if (extras != null) {
             ScanResults = extras.getString("QRCODEVALUE");
-
         }
+
 
     }
 }
