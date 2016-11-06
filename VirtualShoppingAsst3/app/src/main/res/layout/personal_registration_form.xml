@@ -18,8 +18,8 @@
         android:ems="10"
         android:layout_marginTop="13dp"
         android:id="@+id/pmobile"
-        android:layout_below="@+id/pname"
-        android:layout_alignStart="@+id/pname"
+        android:layout_below="@+id/bname"
+        android:layout_alignStart="@+id/bname"
         android:hint="Enter you mobile no" />
 
     <EditText
@@ -49,7 +49,7 @@
         android:id="@+id/textView9"
         android:layout_alignBaseline="@+id/phome"
         android:layout_alignBottom="@+id/phome"
-        android:layout_toStartOf="@+id/pname" />
+        android:layout_toStartOf="@+id/bname" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -157,7 +157,7 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:layout_marginStart="13dp"
-        android:id="@+id/pname"
+        android:id="@+id/bname"
         android:hint="Enter your name"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/textView15" />
@@ -168,8 +168,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
         android:id="@+id/textView6"
-        android:layout_alignBaseline="@+id/pname"
-        android:layout_alignBottom="@+id/pname"
+        android:layout_alignBaseline="@+id/bname"
+        android:layout_alignBottom="@+id/bname"
         android:layout_alignParentStart="true" />
 
     <Button
